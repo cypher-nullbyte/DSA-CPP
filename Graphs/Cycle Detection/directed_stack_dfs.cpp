@@ -43,19 +43,17 @@ void Graph::dfs_util(int v,list<int> &stack,int &res)
 void Graph::dfs(int source)
 {
     list<int> stack;
-    stack.push_front(source);
     int res=0;
-    while(!stack.empty()) // because we're just using stack purely. we can't detect cycles if Graph 'g' is disconnected.
+    for(auto i: adj) 
     {
-        int x=stack.front();
-        stack.pop_front();
+        int x=i.first;
         if(!visited[x])
         {
             stack.push_front(x);
             dfs_util(x,stack,res);
         }
     }
-    cout<<res<<endl;
+    cout<<"There are "<<res<<" cycles"<<endl;
 }
 
 
@@ -68,6 +66,9 @@ int main()
     g.addEdge(2, 0);
     g.addEdge(2, 3);
     g.addEdge(9, 3);
+    g.addEdge(11,10);
+    g.addEdge(10,11);
+    g.addEdge(12,13);
     g.dfs(0);
     return 0;
 }
