@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+ #include<bits/stdc++.h>
 
 using namespace std;
 
@@ -9,9 +9,11 @@ class Graph
         map<int,list<int>> adj;
     
     public:
-        void bfs(int);
+        void bfs();
         
         void addEdge(int u,int v);
+        
+        void bfs_util(int v);
         
 };
 
@@ -21,8 +23,7 @@ void Graph::addEdge(int u,int v)
     // adj[v].push_back(u);
 }
 
-
-void Graph::bfs(int source)
+void Graph::bfs_util(int source)
 {
     queue<int> queue;
     queue.push(source);
@@ -45,6 +46,20 @@ void Graph::bfs(int source)
     }
 }
 
+void Graph::bfs()
+{
+    for(auto i: adj)
+    {
+        if(!visited[i.first])
+        {
+            bfs_util(i.first);
+            cout<<endl;
+        }
+    }
+}
+
+
+
 
 int main()
 {
@@ -55,7 +70,13 @@ int main()
     g.addEdge(2, 0);
     g.addEdge(2, 3);
     g.addEdge(9, 3);
-    g.bfs(0);
+    
+    g.addEdge(11,10);
+    g.addEdge(10,11);
+    
+    g.addEdge(12,13);
+    
+    g.bfs();
     return 0;
 }
 
