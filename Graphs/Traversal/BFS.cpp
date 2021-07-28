@@ -13,7 +13,6 @@ class Graph
         
         void addEdge(int u,int v);
         
-        void bfs_util(int v,stack<int> &stack);
 };
 
 void Graph::addEdge(int u,int v)
@@ -22,19 +21,6 @@ void Graph::addEdge(int u,int v)
     // adj[v].push_back(u);
 }
 
-void Graph::bfs_util(int v,stack<int> &stack)
-{
-    visited[v]=true;
-    cout<<v<<" ";
-    for(auto i: adj[v])
-    {
-        if(!visited[i])
-        {
-            stack.push(v);
-            bfs_util(i,stack);
-        }
-    }
-}
 
 void Graph::bfs(int source)
 {
