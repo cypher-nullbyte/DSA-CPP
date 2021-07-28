@@ -34,6 +34,7 @@ void Graph::dfs_util(int v,stack<int> &stack)
             dfs_util(i,stack);
         }
     }
+    stack.pop();
 }
 
 void Graph::dfs(int source)
@@ -44,7 +45,11 @@ void Graph::dfs(int source)
     {
         int x=stack.top();
         stack.pop();
-        if(!visited[x]) dfs_util(x,stack);
+        if(!visited[x])
+        {
+            stack.push(x);
+            dfs_util(x,stack);
+        }
     }
 }
 
