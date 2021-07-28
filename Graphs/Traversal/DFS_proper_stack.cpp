@@ -41,10 +41,9 @@ void Graph::dfs(int source)
 {
     stack<int> stack;
     stack.push(source);
-    while(!stack.empty())
+    for(auto i: adj) 
     {
-        int x=stack.top();
-        stack.pop();
+        int x=i.first;
         if(!visited[x])
         {
             stack.push(x);
@@ -63,6 +62,11 @@ int main()
     g.addEdge(2, 0);
     g.addEdge(2, 3);
     g.addEdge(9, 3);
+    
+    // g.addEdge(11,10);
+    // g.addEdge(10,11);
+    
+    // g.addEdge(12,13);
     g.dfs(0);
     return 0;
 }
