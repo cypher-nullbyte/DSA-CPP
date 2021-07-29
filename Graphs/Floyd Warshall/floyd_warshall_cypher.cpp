@@ -112,7 +112,7 @@ int main()
     g->addEdge('B','D',2);  //B-D
     g->addEdge('B','E',2);  //B-E
     g->addEdge('D','C',5);  //D-C
-    g->addEdge('D','B',1);  //D-B        // change weight to -1 too see Negative-Weight wroking!
+    g->addEdge('D','B',1);  //D-B        
     g->addEdge('E','D',-3); //E-D
     
     g->print_graph();
