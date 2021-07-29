@@ -111,7 +111,7 @@ int main()
     g->addEdge(0,2,4);  //A-C
     g->addEdge(1,2,3);  //B-C
     g->addEdge(1,3,2);  //B-D
-    g->addEdge(1,4,2);  //A-E
+    g->addEdge(1,4,2);  //B-E
     g->addEdge(3,2,5);  //D-C
     g->addEdge(3,1,1);  //D-B        // change weight to -1 too see Negative-Weight wroking!
     g->addEdge(4,3,-3); //E-D
