@@ -1,3 +1,4 @@
+  
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -92,10 +93,10 @@ void floydWarshall(Graph<T>* graph)
     cout<<" \t";
     for(auto i: id) cout<<i.first<<"\t";
     cout<<endl<<"--------------------------------------------"<<endl;
-    auto it=id.begin();
+    typename map<T,int>::iterator it=id.begin();   // in case templates are involved, use typename/class before iterator
     for(int i=0;i<V;i++)
     {
-        cout<<(*it).first<<" |\t";
+        cout<<it->first<<" |\t";
         for(int j=0;j<V;j++)
             cout<<matrix[i][j]<<"\t";
         cout<<endl;
