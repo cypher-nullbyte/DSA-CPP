@@ -57,6 +57,8 @@ void Graph::dfs(int source)
 }
 
 
+// THE CATCH IN THIS SOLUTION IS THAT IF A NODE IS INVOLVED IN MORE THAN ONE CYCLE, ONLY ONE CYCLE IS COUNTED! 
+
 int main()
 {
     Graph g;
